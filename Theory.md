@@ -1,147 +1,40 @@
-# <p align=center>`Generative Adversarial Networks (GANs)`</p>
+GAN models share two common aspects: solving a challenging saddle point optimization problem, interpreted as an adversarial game between a generator and a discriminator functions.
 
-A collection of resources on Generative Adversarial Networks (GANs).
+a popular paradigm to learn the distribution of the observed data
 
 
 
-## Table of Contents
+Generative models aim to approximate samples from a complex high-dimensional target distribution $\mathbb{P}$. 
 
-- [Introduction](#Introduction)
+The adversarial mechanism reflects by a generator and a discriminator who compete against each other. Unlike other deep neural network models trained with a loss function until convergence, GAN train these two together to maintain a equilibrium finally.
 
-- [Basic GAN](#Basic-GAN)
+The generator learns to map from a low-dimension space $\mathcal{Z}$ to a high-dimension space $\mathcal{X}$ with a model distribution $\mathbb{Q}$.
 
-- [Applicational GAN](#Applicational-GAN)
+The discriminator learns to accurately distinguish between the synthesized data $\mathbf{Y}$ coming from $\mathbb{Q}$ and the real data $\mathbf{X}$ from $\mathbb{P}$. 
 
-  - [Semantic image synthesis](#Semantic-image-synthesis)
+We can denote by $\mathbb{P}$ and $\mathbb{Q}$ the data and model distribution, respectively.
 
-    the goal is to generate multi-modal photorealistic images in alignment with a given semantic label map
 
-- [Multi-Objective GAN](#Multi-Objective-GAN)
 
+Generative Adversarial Network (GAN) is formulated as a two-player game between a gnerator (G) and a discriminator (D), where G targets at reproducing the distribution of observed data through synthesising new samples, and D competes with G by distinguishing the generated images from the real ones. In priciple, they are expected to reach an equilibrium where D cannot tell the real and fake images apart.
 
 
 
+GAN use the reparametrization trick to sample from a complex probability distribution by learning a transformation $y=f(x), x\sim N(0, I)$, where f is the transformatioin function modelled by a neural network.
 
-## Introduction
 
-> Introduce the principle of GAN, for more details, see the subfile
 
-阶段1：能够
+integral probability metrics (IPMs)
 
-- mode collapse
-- gradient vanishing
+> a “well behaved” function with large amplitude where $P_x$ and$P_z$ differ most
 
-阶段2：够好 High-quality
+- Wasserstein IPMs
 
-- high-resolution
-- controllable (representation disentanglement)
-- multi-view consistent
 
-阶段3：新追求
 
-- 3D 
+Maximum Mean Discrepancies (MMDs)
 
-
-
-可以改进的地方：
-
-- loss function
-- regularization and normalization
-- architecture
-
-
-
-按应用场景分：
-
-- image
-- text
-- audio
-- video
-
-
-
-Some review to help you know this field
-
-[Generative Adversarial Networks in Computer Vision: A Survey and Taxonomy]()
-
-[A Review on Generative Adversarial Networks: Algorithms, Theory, and Applications]() 
-
-[Generative Adversarial Networks for Image and Video Synthesis: Algorithms and Applications]()
-
-[Generative adversarial network in medical imaging: A review]()
-
-
-
-**Introduction of GAN**
-
-> 
-
-If you want to know more about more details of the derivation or the difficult of GAN’s training, you can see the part of [Traditional GAN](#Traditional-GAN)
-
-
-
-**Why Are GANs So Popular?**
-
-GANs are popular partly because they tackle the important unsolved challenge of unsupervised learning.
-
-If intelligence was a cake, unsupervised learning would be the cake, supervised learning would be the icing on the cake, and reinforcement learning would be the cherry on the cake. We know how to make the icing and the cherry, but we don’t know how to make the cake. – Yann LeCun, 2016.
-
-
-
-**Why is there an “s” after GANs?**
-
-> It means GAN and its variants
-
-
-
-**Commonly used datasets**
-
-> Mnist, CelebA, LSUN, and ImageNet
-
-
-
-**Facing problem**
-
-> - mode collapse: diversity the generator can only learn some limited patterns from the large-scale target datasets, or assigns all of its probability mass to a small region in the space.
-> - vanishing gradient: 
-
-
-
-**Evaluation metrics of GAN**
-
-> paper: https://arxiv.org/pdf/1806.07755.pdf
->
-> code: https://github.com/xuqiantong/GAN-Metrics
->
-> blog: https://zhuanlan.zhihu.com/p/99375611
-
-
-
-## Traditional GAN
-
-The development of some famous GAN models including <u>Vanilla GAN</u>, <u>DCGAN</u>, <u>WGAN</u>
-
-## Applicational GAN
-
-Some applications of GAN including the use of defense
-
-
-
-### Semantic image synthesis
-
-[You Only Need Adversarial Supervision for Semantic Image Synthesis](https://arxiv.org/pdf/2012.04781.pdf)  
-**[`ICLR 2021`] ()**  
-*Vadim Sushko, Edgar Schönfeld, Dan Zhang, Juergen Gall, Bernt Schiele, Anna Khoreva*
-
-
-
-## Multi-Objective GAN
-
-Add multi-objective and evolutionary algorithm into GAN
-
-
-
-
+> the critic function is a member of a reproducing kernel Hilbert space
 
 ### objective functions of GANs
 
@@ -194,16 +87,6 @@ https://wiki.pathmind.com/generative-adversarial-network-gan
 
 
 
-some new work
-
-https://github.com/hankhank10/fakeface
-
-styleGAN
-
-styleGAN2
-
-https://thispersondoesnotexist.com/
-
 
 
 
@@ -242,17 +125,9 @@ $$
 
 
 
-GAN models share two common aspects: solving a challenging saddle point optimization problem, interpreted as an adversarial game between a generator and a discriminator functions.
 
 
 
-a popular paradigm to learn the distribution of the observed data
 
 
-
-### Basic
-
-
-
-### Applications
 

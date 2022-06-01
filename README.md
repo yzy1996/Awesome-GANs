@@ -1,50 +1,83 @@
 # <p align=center>`awesome Generative Adversarial Networks (GANs)`</p>
 
-> This repo is to help underistand the principle of GANs.
+A collection of resources on Generative Adversarial Networks (GANs).
 
 
 
-The purpose of GAN is to generate/synthesize fake but photo-real images.
+## Table of Contents
 
-We can extract it as 
+- [Introduction](#Introduction)
 
-Because it's a complex distribution, it's hard to directly get the true distribution of the dataset
+- [Basic](#Basic-Knowledge)
 
+  - Pitfalls: mode collapse and vanishing gradient
+  - evaluation metrics
 
+- [Research Branch](#Research-Branch)
 
-Since GANs invention, it has yield impressive results, especially for image generation.
+  - [Semantic image synthesis](#Semantic-image-synthesis)
 
-Recent work can synthesize random high-resolution portraits that are often indistinguishable from real faces.
-
-
-
-Generative models aim to approximate samples from a complex high-dimensional target distribution $\mathbb{P}$. 
-
-The adversarial mechanism reflects by a generator and a discriminator who compete against each other. Unlike other deep neural network models trained with a loss function until convergence, GAN train these two together to maintain a equilibrium finally.
-
-The generator learns to map from a low-dimension space $\mathcal{Z}$ to a high-dimension space $\mathcal{X}$ with a model distribution $\mathbb{Q}$.
-
-The discriminator learns to accurately distinguish between the synthesized data $\mathbf{Y}$ coming from $\mathbb{Q}$ and the real data $\mathbf{X}$ from $\mathbb{P}$. 
-
-We can denote by $\mathbb{P}$ and $\mathbb{Q}$ the data and model distribution, respectively.
+    the goal is to generate multi-modal photorealistic images in alignment with a given semantic label map
+    
+  - Super-resolution, colorisation, text-guided generation
 
 
 
-Generative Adversarial Network (GAN) is formulated as a two-player game between a gnerator (G) and a discriminator (D), where G targets at reproducing the distribution of observed data through synthesising new samples, and D competes with G by distinguishing the generated images from the real ones. In priciple, they are expected to reach an equilibrium where D cannot tell the real and fake images apart.
+## Introduction
+
+The purpose of GAN is to generate/synthesize fake but photo-real images (synthesize high-resolution portraits that are often indistinguishable from real faces). GANs are popular partly because they tackle the important unsolved challenge of unsupervised learning.
+
+If intelligence was a cake, unsupervised learning would be the cake, supervised learning would be the icing on the cake, and reinforcement learning would be the cherry on the cake. We know how to make the icing and the cherry, but we don’t know how to make the cake. – Yann LeCun, 2016.
+
+To quickly touch GAN, [Stylegan: Demo](https://thispersondoesnotexist.com/)
+
+> 描述GAN的发展过程
+
+阶段1：能够生成
+
+- mode collapse
+- gradient vanishing
+
+阶段2：够好 High-quality
+
+- high-resolution
+- controllable (disentanglement)
+- multi-view consistent
+
+阶段3：新追求
+
+- 3D-aware generation
 
 
 
-GAN use the reparametrization trick to sample from a complex probability distribution by learning a transformation $y=f(x), x\sim N(0, I)$, where f is the transformatioin function modelled by a neural network.
+可以改进的地方：
+
+- loss function
+- regularization and normalization
+- architecture
 
 
 
-**Application**
+按应用场景分：
 
-Super-resolution, colorisation, text-guided generation
+- image
+- text
+- audio
+- video
 
 
 
-## SOTA
+Some review to help you know this field
+
+[Generative Adversarial Networks in Computer Vision: A Survey and Taxonomy]()
+
+[A Review on Generative Adversarial Networks: Algorithms, Theory, and Applications]() 
+
+[Generative Adversarial Networks for Image and Video Synthesis: Algorithms and Applications]()
+
+[Generative adversarial network in medical imaging: A review]()
+
+### SOTA
 
 https://paperswithcode.com/task/image-generation
 
@@ -52,53 +85,43 @@ https://paperswithcode.com/sota/image-generation-on-lsun-bedroom-256-x-256
 
 
 
-## Training Strategy
+## Basic Knowledge
 
-- [Projected GANs Converge Faster](https://arxiv.org/pdf/2111.01007.pdf)  
-  *Axel Sauer, Kashyap Chitta, Jens Müller, Andreas Geiger*  
-  **[`NeurIPS 2021`] (`MPI`)** [[Code](https://github.com/bryandlee/animegan2-pytorch)]
+mode collapse: diversity the generator can only learn some limited patterns from the large-scale target datasets, or assigns all of its probability mass to a small region in the space.
 
+vanishing gradient: 
 
+details of the derivation or the difficult of GAN’s training
 
-$z$ is a distribution and $x$ is a distribution and $x^{\prime}$ is also a distribution
+**Evaluation metrics of GAN**
 
-
-
- high-dimensional 
-
-
-
-integral probability metrics (IPMs)
-
-> a “well behaved” function with large amplitude where $P_x$ and$P_z$ differ most
-
-- Wasserstein IPMs
+> paper: https://arxiv.org/pdf/1806.07755.pdf
+>
+> code: https://github.com/xuqiantong/GAN-Metrics
+>
+> blog: https://zhuanlan.zhihu.com/p/99375611
 
 
 
-Maximum Mean Discrepancies (MMDs)
-
-> the critic function is a member of a reproducing kernel Hilbert space
+- [Training Strategy](./Training Strategy )
 
 
 
+## Research Branch
 
-
-
-
-- [On gradient regularizers for MMD GANs](https://arxiv.org/pdf/1805.11565.pdf)  
-  *Michael Arbel, Danica J. Sutherland, Mikołaj Bińkowski, Arthur Gretton*  
-  **[`NeurIPS 2018`] (`UCL`)**
+- Few-shot & Limited data
+- Semantic synthesis
+- Other domain synthesis
+- Pre-trained GAN
+- In&Out painting 
+- Text2image
+- High&Super Reselution
 
 
 
 
 
-## Pre-trained 
 
-- [When, Why, and Which Pretrained GANs Are Useful?](https://openreview.net/pdf?id=4Ycr8oeCoIh)  
-  *Anonymous*  
-  **[`ICLR 2022 submit`]**
 
 
 
