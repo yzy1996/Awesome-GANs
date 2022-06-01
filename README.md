@@ -31,39 +31,9 @@ If intelligence was a cake, unsupervised learning would be the cake, supervised 
 
 To quickly touch GAN, [Stylegan: Demo](https://thispersondoesnotexist.com/)
 
-> 描述GAN的发展过程
-
-阶段1：能够生成
-
-- mode collapse
-- gradient vanishing
-
-阶段2：够好 High-quality
-
-- high-resolution
-- controllable (disentanglement)
-- multi-view consistent
-
-阶段3：新追求
-
-- 3D-aware generation
 
 
-
-可以改进的地方：
-
-- loss function
-- regularization and normalization
-- architecture
-
-
-
-按应用场景分：
-
-- image
-- text
-- audio
-- video
+![GAN Development](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/GAN%20Development.png)
 
 
 
