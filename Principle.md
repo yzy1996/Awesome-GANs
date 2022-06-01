@@ -195,3 +195,21 @@ Maximum Mean Discrepancies (MMDs)
 
 GAN的遗忘性，真样本的作用可以看作是一种防止遗忘的效果，
 
+
+
+### GAN Theory
+
+- [Energy-based generative adversarial network] [[Paper\]](https://arxiv.org/pdf/1609.03126v2.pdf)[[Code\]](https://github.com/buriburisuri/ebgan)(Lecun paper)
+- [Improved Techniques for Training GANs] [[Paper\]](https://arxiv.org/abs/1606.03498)[[Code\]](https://github.com/openai/improved-gan)(Goodfellow’s paper)
+- [Mode Regularized Generative Adversarial Networks] [[Paper\]](https://openreview.net/pdf?id=HJKkY35le)(Yoshua Bengio , ICLR 2017)
+- [Improving Generative Adversarial Networks with Denoising Feature Matching] [[Paper\]](https://openreview.net/pdf?id=S1X7nhsxl)[[Code\]](https://github.com/hvy/chainer-gan-denoising-feature-matching)(Yoshua Bengio , ICLR 2017)
+- [Sampling Generative Networks] [[Paper\]](https://arxiv.org/abs/1609.04468)[[Code\]](https://github.com/dribnet/plat)
+- [How to train Gans] [[Docu\]](https://github.com/soumith/ganhacks#authors)
+- [Towards Principled Methods for Training Generative Adversarial Networks] [[Paper\]](https://openreview.net/forum?id=Hk4_qw5xe)(ICLR 2017)
+- [Unrolled Generative Adversarial Networks] [[Paper\]](https://arxiv.org/abs/1611.02163)[[Code\]](https://github.com/poolio/unrolled_gan)(ICLR 2017)
+- [Least Squares Generative Adversarial Networks] [[Paper\]](https://arxiv.org/abs/1611.04076)[[Code\]](https://github.com/pfnet-research/chainer-LSGAN)(ICCV 2017)
+- [Wasserstein GAN] [[Paper\]](https://arxiv.org/abs/1701.07875)[[Code\]](https://github.com/martinarjovsky/WassersteinGAN)
+- [Improved Training of Wasserstein GANs] [[Paper\]](https://arxiv.org/abs/1704.00028)[[Code\]](https://github.com/igul222/improved_wgan_training)(The improve of wgan)
+- [Towards Principled Methods for Training Generative Adversarial Networks] [[Paper\]](https://arxiv.org/abs/1701.04862)
+- [Generalization and Equilibrium in Generative Adversarial Nets] [[Paper\]](https://arxiv.org/abs/1703.00573)（ICML 2017）
+- 
