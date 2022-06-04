@@ -15,7 +15,7 @@ A collection of resources on Generative Adversarial Networks (GANs).
   - [Conditional GAN](1-Conditional-GAN)
   - Pitfalls: mode collapse and vanishing gradient
   - [Evaluation Metrics](1-Evaluation-Metrics)
-  - [GAN comparation](1-GAN-comparation)
+  - [GANs comparation](1-GANs-comparation)
 
 - [2. Research Branch](#Research-Branch)
 
