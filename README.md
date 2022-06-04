@@ -59,11 +59,11 @@ Some review to help you know this field
 
 ### SOTA
 
-**`[BigGAN]`** [Large scale GAN training for high fidelity natural image synthesis](https://arxiv.org/abs/1809.11096) **`[ICLR 2019]`** **`(Brock et al.)`**
+**`[BigGAN]`** [Large scale GAN training for high fidelity natural image synthesis](https://arxiv.org/abs/1809.11096) **`[ICLR 2019]`**
 
-**`[StyleGAN]`** [A style-based generator architecture for generative adversarial networks](https://arxiv.org/abs/1812.04948) **`[CVPR 2019]`** **`(Karras et al.)`**
+**`[StyleGAN]`** [A style-based generator architecture for generative adversarial networks](https://arxiv.org/abs/1812.04948) **`[CVPR 2019]`**
 
-**`[StyleGAN2]`** [Analyzing and Improving the Image Quality of StyleGAN](https://arxiv.org/abs/1912.04958) **`[CVPR2020]`** **`(Karras et al.)`**
+**`[StyleGAN2]`** [Analyzing and Improving the Image Quality of StyleGAN](https://arxiv.org/abs/1912.04958) **`[CVPR2020]`**
 
 > able to generate good-looking high-resolution images (even can not be distinguished from real ones)
 
