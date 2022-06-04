@@ -10,7 +10,7 @@ A collection of resources on Generative Adversarial Networks (GANs).
 
 - [1. Basic](#Basic-Knowledge)
 
-  - [For-Beginner](For-Beginner)
+  - [For-Beginner](0-For-Beginner)
   - [GANs Structure Variances](./1-GANs Structure Variances)
   - [Conditional GAN](./Conditional GAN)
   - Pitfalls: mode collapse and vanishing gradient
