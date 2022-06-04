@@ -11,15 +11,15 @@ A collection of resources on Generative Adversarial Networks (GANs).
 - [1. Basic](#Basic-Knowledge)
 
   - [For-Beginner](0-For-Beginner)
-  - [GANs Structure Variances](./1-GANs Structure Variances)
-  - [Conditional GAN](./Conditional GAN)
+  - [GANs Structure Variances](1-GANs-Structure-Variances)
+  - [Conditional GAN](1-Conditional-GAN)
   - Pitfalls: mode collapse and vanishing gradient
-  - [Evaluation Metrics](./Evaluation Metrics)
-  - [GAN comparation](./GAN comparation)
+  - [Evaluation Metrics](1-Evaluation-Metrics)
+  - [GAN comparation](1-GAN-comparation)
 
 - [2. Research Branch](#Research-Branch)
 
-  - [Semantic image synthesis](#Semantic-image-synthesis)
+  - [Semantic image synthesis](2-Semantic-image-synthesis)
 
     the goal is to generate multi-modal photorealistic images in alignment with a given semantic label map
     
