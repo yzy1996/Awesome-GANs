@@ -25,9 +25,9 @@ A collection of resources on Generative Adversarial Networks (GANs).
     
   - Super-resolution, colorisation, text-guided generation
 
-  - Few-shot & Limited Data
+  - [Few-shot & Limited Data](2-Few-shot-&-Limited-Data)
 
-  - Pre-trained GAN
+  - [Pre-trained GAN](2-Pre-trained-GANs)
 
 
 
