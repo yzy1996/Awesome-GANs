@@ -2,6 +2,39 @@
 
 
 
+
+
+# WGAN
+
+Instead of using a discriminator to classify or predict the probability of generated images as being real or fake, the WGAN changes or replaces the discriminator model with a critic that scores the realness or fakeness of a given image.
+
+
+
+The differences in implementation for the WGAN are as follows:
+
+1. Use a linear activation function in the output layer of the critic model (instead of sigmoid).
+2. Use -1 labels for real images and 1 labels for fake images (instead of 1 and 0).
+3. Use Wasserstein loss to train the critic and generator models.
+4. Constrain critic model weights to a limited range after each mini batch update (e.g. [-0.01,0.01]).
+5. Update the critic model more times than the generator each iteration (e.g. 5).
+6. Use the RMSProp version of gradient descent with a small learning rate and no momentum (e.g. 0.00005).
+
+
+
+critic model
+
+> 输入28*28 image，输出[-1,1] score
+
+
+
+
+
+DCGAN设计最好的是使用**LeakyReLU activation function** with a **slope of 0.2**, **batch normalization**, and using a **2×2 stride** to downsample.
+
+
+
+
+
 # Earth-Mover (EM) distance/ Wasserstein Metric
 
 
@@ -19,3 +52,8 @@ $$
 其中 $f$ 为判别器函数，只有当判别器函数满足 1-Lipschitz 约束时，(2) 才能转化为 (3)。除此之外，正如上文所说，Lipschitz continuous 的函数的梯度上界被限制，因此函数更平滑，在神经网络的优化过程中，参数变化也会更稳定，不容易出现梯度爆炸，因此Lipschitz continuity 是一个很好的性质。
 
 为了让判别器函数满足 1-Lipschitz continuity，WGAN 和之后的 WGAN-GP 分别采用了 weight-clipping 和 gradient penalty 来约束判别器参数。
+
+
+
+
+
