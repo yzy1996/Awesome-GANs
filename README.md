@@ -107,7 +107,13 @@ details of the derivation or the difficult of GAN’s training
 
 
 
+### Dataset
 
+CelebA
+
+FFHQ
+
+CelebV-HQ: A Large-Scale Video Facial Attributes Dataset
 
 
 
@@ -192,5 +198,4 @@ It is easy and better to manipulate a given image in the latent feature space.
   [2019-Oogan](Disentangling gan with one-hot sampling and orthogonal regularization)  forces the code vector $c$ to be one-hot, simplifying the task for a GAN discriminators' head to predict the code.
 
   [2020-VAE-GAN](High-fidelity synthesis with disentangled representation)  combine VAE and GAN to achieve a disentanglement images representation by the VAE and then pass the discovered code to the GAN model.
-
 
