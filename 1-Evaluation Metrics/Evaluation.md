@@ -1,5 +1,3 @@
-
-
 ## Manual GAN Evaluation
 
 *Visual examination of samples by humans is one of the common and most intuitive ways to evaluate GANs.   -- Pros and Cons of GAN Evaluation Measures, 2018*

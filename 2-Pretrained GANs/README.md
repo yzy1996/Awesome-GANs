@@ -2,7 +2,7 @@
 
 
 
-Can be related to controllable GAN
+Can be related to controllable GAN and GAN inversion.
 
 
 
