@@ -549,3 +549,12 @@ Gan-control: Explicitly controllable gans
 [Deforming autoencoders: Unsupervised disentangling of shape and appearance](https://arxiv.org/pdf/1806.06503.pdf)  
 **[`ECCV 2018`] (`Stony Brook University`)**   
 *Zhixin Shu, Mihir Sahasrabudhe, Alp Guler, Dimitris Samaras, Nikos Paragios, Iasonas Kokkinos*
+
+
+
+
+
+
+
+Disentanglement learning
+
