@@ -197,8 +197,9 @@ based on InfoGAN
 
 Self-supervised learning
 
-![mylatex20201030_110850](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201030110908.svg)
-
+$$
+\min _{A, R} \underset{z, k, \varepsilon}{\mathbb{E}} L(A, R)=\min _{A, R} \underset{z, k, \varepsilon}{\mathbb{E}}\left[L_{c l}(k, \widehat{k})+\lambda L_r(\varepsilon, \widehat{\varepsilon})\right]
+$$
 
 
 </p></details>

@@ -110,6 +110,14 @@ Z空间就直接随机生成就好了，10000张图
 
 
 
+The demodulation operation is a substitute for instance normalization
+
+retain the relative magnitude between channels.
+
+truncation tricks
+
+
+
 
 
 
@@ -128,5 +136,13 @@ Z空间就直接随机生成就好了，10000张图
 
 
 
+学习 stylegan 
 
+https://nn.labml.ai/gan/stylegan/index.html 代码详细解读
+
+
+
+
+
+理解里面的几个步骤，是关于instantce normalization
 
