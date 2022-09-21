@@ -35,12 +35,12 @@ The goal is to generate or modify images satisfying our specific requirements. T
 The first line proposes conditional GANs to generate with $p(z \mid y)$ or employ auxiliary classifiers to enforce the gan network to generate desired results.
 
 Another line is to utilize the latent space of a pretrained generator for image manipulation. In this line, we could also control and modify a given real image by inverting the image into latent code (**inversion**). The main idea behind this method is to disentangle the latent space. A common practice is to analyze and dissect GANs’ latent spaces, finding disentangled latent variables suitable for editing. The disentangled latent variables sometimes are interpretable directions $d$. Careful modifications of the latent embeddings then translate to desired changes in the generated output.
+
 $$
 x = G(z_0) \rightarrow x' = G(z_0 + \alpha d)
 $$
-these directions should be better orthogonal do not interfere with each other, moving in these directions corresponds to 
 
-These valid direction could be seen as some manifold of the latent space, meaningful subspaces corresponding to the human-understandable attributes.
+These directions should be orthogonal which do not interfere with each other, moving in these directions corresponds to attributes variation. These valid direction could also be seen as some manifold of the latent space, meaningful subspaces corresponding to the human-understandable attributes.
 
 
 
@@ -51,8 +51,6 @@ Such control can be obtained by first learning the manifold and then realizing i
 Many works have examined semantic directions in the latent spaces spontaneously learned by pre-trained GANs. The widely used StyleGAN is a common choice for its high-quality synthesis and remarkable latent-based editing quality through its rich and highly disentangled latent space.
 
 Some using full-supervision in the form of semantic labels, others find meaningful directions in a self-supervised fashion, and, finally, recent works present unsupervised methods to achieve the same goal. 
-
-
 
 
 
@@ -81,9 +79,7 @@ One more thing is the interaction mode:
 
 :eyes: **What can we edit/control?**
 
-Meaningful human interpretable directions can refer to either domain-specific factors (e.g., facial expressions) or domain-agnostic factors (e.g., zoom scale).
-
-Some examples including:
+Meaningful human interpretable directions can refer to either domain-specific factors (e.g., facial expressions) or domain-agnostic factors (e.g., zoom scale). Some examples including:
 
 - change facial expressions in portraits
 - change view-point or shapes and textures of cars
@@ -111,8 +107,6 @@ some simple transformation (rotation, zooming)
 
 ## Methods Taxonomy
 
-
-
 This is the summary of controllable GAN including;
 
 - [training stage] conditional GAN mode 
@@ -129,15 +123,14 @@ This is the summary of controllable GAN including;
   >
   > :speech_balloon: requires large labeled datasets. These methods are limited to image types for which large annotated datasets are available, like **portraits**. Limited editing control 
 
-- 2.2 Analyze and dissect GANs’ latent spaces, finding disentangled latent variables suitable for editing
+- Analyze and dissect GANs’ latent spaces, finding disentangled latent variables suitable for editing
 
   > :speech_balloon: **do not enable detailed editing and are often slow**.
   >
   > used in real-time on different images and with different edits
 
-- 2.3 change network weight
+- change network weight
 
-  > 
 
 
 
@@ -145,37 +138,13 @@ This is the summary of controllable GAN including;
 
 
 
-global semantics
-
-local semantics
-
 
 
 :pushpin: **Problem Statement**
 
-a (<u>pretrained</u>) fixed GAN model consisting of a generator **G** and a discriminator **D**
+A (<u>pretrained</u>) fixed GAN model consisting of a generator **G** and a discriminator **D**，latent vector $\boldsymbol{z} \in \mathbb{R}^m$ from a known distribution $P(\boldsymbol{z})$, and sample $N$ random vectors $\mathbb{Z} = \{\boldsymbol{z}^{(1)}, \dots, \boldsymbol{z}^{(N)}\}$
 
-latent vector $\boldsymbol{z} \in \mathbb{R}^m$ from a known distribution $P(\boldsymbol{z})$, and sample $N$ random vectors $\mathbb{Z} = \{\boldsymbol{z}^{(1)}, \dots, \boldsymbol{z}^{(N)}\}$
-
-We want to discover K non-linear interpretable paths on the latent space 
-
-
-
-an Autoencoder do assume two parametric models 1) $f: \mathcal{X} \rightarrow \mathcal{Z}$ and 2) $g: \mathcal{Z} \rightarrow \mathcal{X}$. 
-
-we want to minimize the reconstruction loss $
-
-
-
-The most straightforward way is to first generate a collection of image synthesis, then label these images regarding a target attribute, and finally find the latent separation boundary through supervised training.
-
-
-
-In view of the annotation drawbacks of previous method, finding steerable directions of the latent space in an unsupervised manner is another direction, such as using PCA.
-
-
-
-The common issue of the existing approaches is the limitation of global semantics, we would like to focus on some particular image region
+We want to discover K non-linear interpretable paths on the latent space. The most straightforward way is to first generate a collection of image synthesis, then label these images regarding a target attribute, and finally find the latent separation boundary through supervised training. In view of the annotation drawbacks of previous method, finding steerable directions of the latent space in an unsupervised manner is another direction, such as using PCA. The common issue of the existing approaches is the limitation of global semantics, we would like to focus on some particular image region.
 
 
 
@@ -201,21 +170,24 @@ So the three important properties can be summarized as **informativeness**, **se
 [Measuring Disentanglement: A Review of Metrics](https://arxiv.org/pdf/2012.09276.pdf)  
 Julian Zaidi, Jonathan Boilard, Ghyslain Gagnon, Marc-André Carbonneau  
 
-
-
 [Theory and Evaluation Metrics for Learning Disentangled Representations](https://arxiv.org/pdf/1908.09961.pdf)  
 *Kien Do, Truyen Tran*  
-**[`ICLR 2020`] ()**
+**[`ICLR 2020`]**
 
 
 
 ### Tricks
 
-[GLO](#GLO): 通常是假设 z 服从高斯分布，而这样导致点不太可能落在离球面 $\mathcal{S}(\sqrt{d}, d, 2)$ 太远的地方。又因为投影到球体上很容易且数值友好，因此会时刻让 z 映射到一个球体上。使用中，也会不使用 $\sqrt{d}$ 的球体，而是直接用单位球。
-
-[Optimizing the Latent Space of Generative Networks](https://arxiv.org/pdf/1707.05776.pdf)  
+[(GLO) Optimizing the Latent Space of Generative Networks](https://arxiv.org/pdf/1707.05776.pdf)  
 **[`ICML 2018`] (`Facebook`)**  
 *Piotr Bojanowski, Armand Joulin, David Lopez-Paz, Arthur Szlam*
+
+<details><summary>Click to expand</summary>
+
+通常是假设 z 服从高斯分布，而这样导致点不太可能落在离球面 $\mathcal{S}(\sqrt{d}, d, 2)$ 太远的地方。又因为投影到球体上很容易且数值友好，因此会时刻让 z 映射到一个球体上。使用中，也会不使用 $\sqrt{d}$ 的球体，而是直接用单位球。
+
+</details>
+
 
 ## Literature
 
@@ -223,14 +195,13 @@ Julian Zaidi, Jonathan Boilard, Ghyslain Gagnon, Marc-André Carbonneau
 
 ### Survey
 
-Representation learning: A review and new perspectives
+[Representation Learning: A Review and New Perspectives](https://arxiv.org/abs/1206.5538)  
+*Yoshua Bengio, Aaron Courville, Pascal Vincent*
 
 [Challenging Common Assumptions in the Unsupervised Learning of Disentangled Representations](https://arxiv.org/pdf/1811.12359.pdf)
 *Francesco Locatello, Stefan Bauer, Mario Lucic, Gunnar Rätsch, Sylvain Gelly, Bernhard Schölkopf, Olivier Bachem*
 
 ### 1.1 Conditional GAN
-
-click to see detailed notes
 
 - [StarGAN: Unified Generative Adversarial Networks for Multi-Domain Image-to-Image Translation](https://arxiv.org/pdf/1711.09020.pdf)  
   Yunjey Choi, Minje Choi, Munyoung Kim, Jung-Woo Ha, Sunghun Kim, Jaegul Choo  
@@ -277,8 +248,6 @@ click to see detailed notes
 
 > encode a given image into a latent representation of the manipulated image
 
-
-
 - [Face Identity Disentanglement via Latent Space Mapping](https://arxiv.org/pdf/2005.07728.pdf)  
   *Yotam Nitzan, Amit Bermano, Yangyan Li, Daniel Cohen-Or*  
   **[`TOG 2020`] (`Tel-Aviv University`)**
@@ -298,8 +267,6 @@ click to see detailed notes
 ### 2.2 Modify GAN Model
 
 control GANs' network parameters
-
-click to see detailed notes
 
 > Good: one model can produce countless new images following the modified rules.
 
@@ -323,9 +290,7 @@ click to see detailed notes
 
 > analyze and dissect latent space,finding disentangled latent variables suitable for editing.
 
-the discovered directions   linear / nonlinear path
-
-their evaluation relies either on visual inspection or on laborious human labeling.
+the discovered directions   linear / nonlinear path | their evaluation relies either on visual inspection or on laborious human labeling.
 
 - [EditGAN: High-Precision Semantic Image Editing](https://arxiv.org/pdf/2111.03186.pdf)  
   *Huan Ling, Karsten Kreis, Daiqing Li, Seung Wook Kim, Antonio Torralba, Sanja Fidler*  
@@ -388,8 +353,6 @@ improves the memorability of the output image
 - [Controlling generative models with continuous factors of variations](https://arxiv.org/pdf/2001.10238.pdf)  
   *Antoine Plumerault, Hervé Le Borgne, Céline Hudelot*  
   **[`ICLR 2020`] (`CEA`)**
-
-
 
 
 
@@ -528,12 +491,6 @@ The geometry of deep generative image models and its applications
 
 
 
-
-
-
-
-
-
 > augmenting and regularizing the latent space
 
 A free viewpoint portrait generator with dynamic styling
@@ -544,30 +501,13 @@ Gan-control: Explicitly controllable gans
 
 
 
-
-
 [Deforming autoencoders: Unsupervised disentangling of shape and appearance](https://arxiv.org/pdf/1806.06503.pdf)  
 **[`ECCV 2018`] (`Stony Brook University`)**   
 *Zhixin Shu, Mihir Sahasrabudhe, Alp Guler, Dimitris Samaras, Nikos Paragios, Iasonas Kokkinos*
 
 
 
-
-
-
-
-Disentanglement learning
-
-
-
-
-
-
-
-| For Face |      |
-| ------------------------------------------------------------ | ---- |
-| [MaskGAN: Towards Diverse and Interactive Facial Image Manipulation](https://arxiv.org/pdf/1907.11922.pdf)  <br />**[`CVPR 2020`]** Cheng-Han Lee, Ziwei Liu, Lingyun Wu, Ping Luo ||
-| |      |
-|                                                              |      |
-|                                                              |      |
+| For Face |
+| ------------------------------------------------------------ |
+| [MaskGAN: Towards Diverse and Interactive Facial Image Manipulation](https://arxiv.org/pdf/1907.11922.pdf)  <br />**[`CVPR 2020`]** Cheng-Han Lee, Ziwei Liu, Lingyun Wu, Ping Luo |
 
