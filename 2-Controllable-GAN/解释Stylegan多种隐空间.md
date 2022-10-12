@@ -77,7 +77,7 @@ Analyzing and improvingthe image quality of StyleGAN
 
 Indomain GAN inversion for real image editing
 
-
+主要用在style-mixing and image-inversion
 
 
 
@@ -142,7 +142,33 @@ https://nn.labml.ai/gan/stylegan/index.html 代码详细解读
 
 
 
-
-
 理解里面的几个步骤，是关于instantce normalization
+
+
+
+
+
+
+
+1. 先有一个预训练好的stylegan2模型
+2. 采样500K个latent vector z
+3. 计算这些z对应的w和s vectors，以及图像images
+4. 用40类的分类器，对这些图片打分
+
+
+
+
+
+
+
+```python
+latent_w = generator.get_latents(latent_z)
+
+
+
+```
+
+
+
+
 
