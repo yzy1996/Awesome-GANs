@@ -40,7 +40,7 @@ If intelligence was a cake, unsupervised learning would be the cake, supervised 
 
 See more details in the subfolders.
 
-- [Classical GANs](./1-Classical GANs)
+- [Classical GANs](./1-Classical-GANs)
 
 - [Conditional GAN](1-Conditional-GAN-(cGAN))
 
