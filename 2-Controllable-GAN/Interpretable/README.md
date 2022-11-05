@@ -23,3 +23,33 @@ CVPR Tutorial
 
 
 Supervised approach, unsupervised approach, zero-shot approach
+
+**- Interpretable directions in the latent space
+
+  [InfoGAN]()  enforces the generated images to preserve information about the latent code coordinates by maximizing the corresponding mutual information.
+
+  [$\beta$-VAE]()  put more emphasis on the $KL$-term in the standard VAE's ELBO objective.
+
+  [2019-Oogan](Disentangling gan with one-hot sampling and orthogonal regularization)  forces the code vector $c$ to be one-hot, simplifying the task for a GAN discriminators' head to predict the code.
+
+  [2020-VAE-GAN](High-fidelity synthesis with disentangled representation)  combine VAE and GAN to achieve a disentanglement images representation by the VAE and then pass the discovered code to the GAN model.**
+
+
+
+
+
+
+
+- **model interpretability**
+
+  - the structure of latent spaces
+
+    semantic meaningful directions
+
+    1.existence: exist such directions
+
+    2.domain agnostic transformations (zooming or translation) & domain-specific transformations (adding smile or glasses)
+
+  - disentangled latent spaces
+
+- Disentanglement learning

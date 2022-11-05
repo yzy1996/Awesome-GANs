@@ -4,10 +4,17 @@ A collection of resources on GAN Inversion.
 
 Related material: [awesome-gan-inversion](https://github.com/weihaox/awesome-gan-inversion)
 
-[GAN Inversion: A Survey](https://arxiv.org/pdf/2101.05278.pdf)  
-*Weihao Xia, Yulun Zhang, Yujiu Yang, Jing-Hao Xue, Bolei Zhou, Ming-Hsuan Yang*
+
 
 ## Introduction
+
+One of the most fundamental challenge in generative models is to design an encoder that is both computationally efficient and invertible. GAN inversion trains an encoder seperately after GANs are pre-trained. VAEs and normalizing flows have their encoders by design.
+
+
+
+Previous works have formulated plug-and-play guidance of generative models as latent-space energy-based models. 
+
+
 
 edibility-distortion tradeoff
 
@@ -160,6 +167,13 @@ There are many real-world applications, such as:
 
 
 ## Literature
+
+[GAN Inversion: A Survey](https://arxiv.org/pdf/2101.05278.pdf)  
+*Weihao Xia, Yulun Zhang, Yujiu Yang, Jing-Hao Xue, Bolei Zhou, Ming-Hsuan Yang*
+
+
+
+
 
 encoder-based
 

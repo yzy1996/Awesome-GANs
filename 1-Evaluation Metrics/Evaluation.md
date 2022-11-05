@@ -4,6 +4,18 @@
 
 
 
+paper: https://arxiv.org/pdf/1806.07755.pdf
+
+code: https://github.com/xuqiantong/GAN-Metrics
+
+blog: https://zhuanlan.zhihu.com/p/99375611
+
+
+
+https://github.com/GaParmar/clean-fid
+
+
+
 ## Qualitative GAN Evaluation
 
 1. Nearest Neighbors.
@@ -120,14 +132,7 @@ python -m pytorch_fid path/to/dataset1 path/to/dataset2
 
 
 
-
-
-
-
 interpolation quality and disentanglement
 
 
 
-
-
-https://github.com/GaParmar/clean-fid
