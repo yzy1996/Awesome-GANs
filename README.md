@@ -24,7 +24,7 @@ If intelligence was a cake, unsupervised learning would be the cake, supervised 
 
 **To read some related survey:** [2019](https://arxiv.org/abs/1906.01529) [2020](https://arxiv.org/abs/2001.06937) 
 
-**SOTA Benchmark: ** [Image Generation](https://paperswithcode.com/task/image-generation) 
+**SOTA Benchmark:** [Image Generation](https://paperswithcode.com/task/image-generation) 
 
 ![GAN Development](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/GAN%20Development.png)
 
