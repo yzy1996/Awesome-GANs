@@ -41,12 +41,9 @@ If intelligence was a cake, unsupervised learning would be the cake, supervised 
 See more details in the subfolders.
 
 - [Classical GANs](./1-Classical-GANs)
-
 - [Conditional GAN](1-Conditional-GAN)
-
 - [Evaluation Metrics](./1-Evaluation-Metrics)
-- [GANs Comparation](./1-GANs-Comparation)
-- [Training Strategy](./Training-Strategy )
+- [Training Strategy](./1-Training-Strategy )
 
 
 
