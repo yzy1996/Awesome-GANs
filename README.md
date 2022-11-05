@@ -42,7 +42,7 @@ See more details in the subfolders.
 
 - [Classical GANs](./1-Classical-GANs)
 
-- [Conditional GAN](1-Conditional-GAN-(cGAN))
+- [Conditional GAN](1-Conditional-GAN)
 
 - [Evaluation Metrics](./1-Evaluation-Metrics)
 - [GANs Comparation](./1-GANs-Comparation)
@@ -55,10 +55,9 @@ See more details in the subfolders.
 |                            Branch                            |                                                              |
 | :----------------------------------------------------------: | ------------------------------------------------------------ |
 |           [Controllable-GAN](./2-Controllable-GAN)           | **Inverion**. We can find a common latent code, and we can also find a seperate code for each layer of the generator. It is easy and better to manipulate a given image in the latent feature space. |
-|    [Few-Shot & Limited Data](./2-Few-Shot-&-Limited-Data)    |                                                              |
+|     [Few-Shot & Limited Data](./2-Few-Shot-Limited-Data)     |                                                              |
 |            [Pretrained GANs](./2-Pretrained-GANs)            |                                                              |
-|    [Semantic image synthesis](2-Semantic-image-synthesis)    | the goal is to generate multi-modal photorealistic images in alignment with a given semantic label map |
-| [Style Transfer & Image2Image](./2-Style-Transfer-&-Image2Image) |                                                              |
+| [Style Transfer & Image2Image](./2-Style-Transfer-Image2Image) |                                                              |
 |         [Other Applications](./3-Applicational-GAN)          | In&Out painting, Text2image, High&Super Reselution, Animation, Video Generation |
 
 
