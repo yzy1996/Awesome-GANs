@@ -42,8 +42,8 @@ See more details in the subfolders.
 
 - [Classical GANs](./1-Classical-GANs)
 - [Conditional GAN](1-Conditional-GAN)
+- [Improving-GANs](./1-Improving-GANs)
 - [Evaluation Metrics](./1-Evaluation-Metrics)
-- [Training Strategy](./1-Training-Strategy )
 
 
 

@@ -4,6 +4,14 @@
 
 
 
+
+
+[clean-fid](https://github.com/GaParmar/clean-fid) for Evaluating Generative Models 
+
+
+
+
+
 paper: https://arxiv.org/pdf/1806.07755.pdf
 
 code: https://github.com/xuqiantong/GAN-Metrics

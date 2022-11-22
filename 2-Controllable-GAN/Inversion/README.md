@@ -395,3 +395,14 @@ one view real image -> share latent code + view latent code -> decoder - > 3D ne
 
 
 In-domain GAN inversion for real image editing
+
+
+
+
+
+## Code
+
+[Pivotal Tuning Inversion (PTI)](https://github.com/danielroich/PTI)
+
+[Encoder4Editing](https://github.com/omertov/encoder4editing)
+

@@ -36,10 +36,10 @@ internal issues is **the overfitting of the discriminator**
 - [Differentiable Augmentation for Data-Efficient GAN Training](https://arxiv.org/pdf/2006.10738.pdf)  
   *Shengyu Zhao, Zhijian Liu, Ji Lin, Jun-Yan Zhu, Song Han*  
   **[`NeurIPS 2020`]** **(`MIT`)** [[:octocat:](https://github.com/mit-han-lab/data-efficient-gans)]
-- [On data augmentation for GAN training](https://arxiv.org/abs/2006.05338)  
+- [On Data Augmentation for GAN Training](https://arxiv.org/abs/2006.05338)  
   *Ngoc-Trung Tran, Viet-Hung Tran, Ngoc-Bao Nguyen, Trung-Kien Nguyen, Ngai-Man Cheung*  
   **[`TIP 2021`] (`SUTD`)**  
-- [Image augmentations for GAN training](https://arxiv.org/abs/2006.02595)  
+- [Image Augmentations for GAN Training](https://arxiv.org/abs/2006.02595)  
   *Zhengli Zhao, Zizhao Zhang, Ting Chen, Sameer Singh, Han Zhang*  
   **[`Arxiv 2020`] (`UC Irvine, Google`)**  
 - [Towards Faster and Stabilized GAN Training for High-fidelity Few-shot Image Synthesis](https://arxiv.org/abs/2101.04775)  

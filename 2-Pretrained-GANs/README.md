@@ -1,10 +1,6 @@
 # <p align=center>`Pretrained GANs`</p>
 
-
-
 Can be related to controllable GAN and GAN inversion.
-
-
 
 
 
@@ -39,6 +35,13 @@ This is built upon the foundation that recent GANs provides a naturally disentan
 
 
 In contrast to training-based methods, pre-trained GANs are proved to naturally have good disentanglement property. Manipulation in the latent space causing directly semantic changes into the image space.
+
+
+
+Work on leveraging pre-trained representations for GANs can be divided into two categories: 
+
+1. transferring parts of a GAN to a new dataset.
+2. using pre-trained models to control and improve GANs
 
 
 
@@ -128,3 +131,5 @@ Exploiting deep generativeprior for versatile image restoration and manipulation
 Disentangling in latent space by harnessing a pretrainedgenerator.
 
 Encodingin style: a stylegan encoder for image-to-image translation
+
+Image manipulation with perceptual discriminators
