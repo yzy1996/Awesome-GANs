@@ -4,56 +4,45 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) 
 
-A collection of resources on Image Style Transfer (photorealistic image stylization).
+A collection of resources on Image Style Transfer (photorealistic image stylization) and Image-to-image (i2i) translation,
 
-Or named Image-to-image (i2i) translation
 
-## Contributing
 
-Feedback and contributions are welcome! If you think I have missed out on something (or) have any suggestions (papers, implementations and other resources), feel free to pull a request or leave an issue. I have also released the [latex-pdf version](). 
+<details><summary>Contributing: Click to expand </summary>
 
-markdown format:
+Feedback and contributions are welcome! If you think I have missed out on something (or) have any suggestions (papers, implementations and other resources), feel free to pull a request or leave an issue. I will release the [latex-pdf version]() in the future. :arrow_down:markdown format:
 
 ``` markdown
-[Paper Name](abs/pdf link)  
+[Paper Name](abs link)  
+*[Author 1](homepage), Author 2, and Author 3*
 **[`Conference/Journal Year`] (`Institution`)** [[Github](link)] [[Project](link)]
-*[Author 1](homepage), Author 2, and Author 3.*  
-<details><summary>Click to expand</summary><p>
-A summary here
-</p></details>
 ```
 
+:smile: Now you can use this [script](https://github.com/yzy1996/Python-Code/tree/master/Python%2BarXiv) to automatically generate the above text.
 
+</details>
 
 ## Introduction
 
+**Unsupervised image-to-image translation (UNIT)** aims to translate images from one domain to another without paired data.
+
+
+
 Photorealistic image stylization aims at changing style of a photo to that of a reference photo with the constraint that the stylized photo should remain photorealistic.
 
-Related Apps: Prisma
-
-
-
- learn translations between domains, applying to the context of source images a target appearance learned from a dataset.
-
-
-
-widely practical use, such as colorization, super resolution, semantic synthesis and domain adaption.
-
-
-
-the number of tags N and the number of attributes M
+learn translations between domains, applying to the context of source images a target appearance learned from a dataset.
 
 
 
 It has attracted increasing attentions since its widely practical use, such as 
 
-- colorization, 
+- colorization
 
 - super resolution
 
-  > 为什么这个也能用到呢？
+- semantic synthesis
 
-- semantic synthesis.
+- domain adaption
 
 
 
