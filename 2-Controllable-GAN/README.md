@@ -4,15 +4,13 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) 
 
-A collection of resources on Controllable Generation (Latent Space Manipulation). Specific attribute-pose is summarized in [3D-Aware-Generation](../3D-Aware-Generation)
-
-> Some key words: interpreting, latent space navigation, steerable, steerability, interpretable, semantics, manual annotation, meaningful directions, semantic image editing, independence, exclusiveness.
+A collection of resources on Controllable Generation (Latent Space Manipulation). Specific attribute of pose is summarized in [3D-Aware-Generation](../3D-Aware-Generation); Conditional GANs is summarized in [Conditional-GANs](../1-Conditional-GAN).
 
 *PS: this repo does **not** contains style transfer, I would tend to classify it as artistic creation (mix and interpolate features from different images).*
 
+> **Key Words**: interpreting, latent space navigation, steerable, steerability, interpretable, semantics, manual annotation, meaningful directions, semantic image editing, independence, exclusiveness.
 
-
-## Contributing
+<details><summary><b>Contributing</b></summary><p>
 
 Feedback and contributions are welcome! If you think I have missed out on something (or) have any suggestions (papers, implementations and other resources), feel free to pull a request or leave an issue. I will release the [latex-pdf version]() in the future. :arrow_down:markdown format:
 
@@ -24,9 +22,45 @@ Feedback and contributions are welcome! If you think I have missed out on someth
 
 :smile: Now you can use this [script](https://github.com/yzy1996/Python-Code/tree/master/Python%2BarXiv) to automatically generate the above text.
 
+</p></details>
+
+
+
+
+## Contents
+
+1. [Introduction](#Introduction)
+2. [Methods Taxonomy](#Methods Taxonomy)
+3. [Tricks](#Tricks)
+4. [Literature](#Literature)
+
 
 
 ## Introduction
+
+
+<details><summary><b>中文介绍</b></summary><p>
+我认为要弄清楚这么几个问题：
+
+1. 为什么存在这种可能性,
+
+2. 意义在哪里
+
+   检验生成模型的插值性能，已经成为了一个主流的必备实验，因为我们希望学到的模型本身就具有良好的泛化性质，也就是在Latent Space上的分布是连续的。Manifold。
+
+3. 哪些属性是我们可以编辑的？
+
+   人脸的五官，目标位置的放缩/旋转移动，视角
+
+我们主要关心的范式是
+
+隐空间做编辑，想编辑新生成的，也想编辑新生成的，所以要做Inversion
+
+
+
+
+
+</p></details>
 
 Conventional generative models excel at generating random realistic samples with statistics resembling the training set. However, controllable and interactive matters rather than random. GANs do not provide an inherent way of comprehending or controlling the underlying generative factors. But some researches show that a well-trained GAN is able to encode different semantics inside the latent space. Therefore, a key problem of generative models is to gain explicit control of the synthesis process or results.
 
@@ -58,8 +92,6 @@ Some using full-supervision in the form of semantic labels, others find meaningf
 
 
 
-
-
 :dart: **Summary**
 
 We mainly focus on the *disentanglement in the latent space* of a generative model. We hope:
@@ -69,11 +101,24 @@ We mainly focus on the *disentanglement in the latent space* of a generative mod
 - disentangle in an unsupervised manner
 - find more disentangled directions that do not interfere with each other
 - provide continuous manipulation of multiple attributes simultaneously
-- high-pricision
+- high-precision
 
-One more thing is the interaction mode:
+- interaction mode: provide segmentation mask to change specific area.
 
-- provide segmentation mask to change specific area.
+
+
+:pushpin: **Problem Statement**
+
+A (<u>pretrained</u>) fixed GAN model consisting of a generator **G** and a discriminator **D**, latent vector $\boldsymbol{z} \in \mathbb{R}^m$ from a known distribution $P(\boldsymbol{z})$, and sample $N$ random vectors $\mathbb{Z} = \{\boldsymbol{z}^{(1)}, \dots, \boldsymbol{z}^{(N)}\}$
+
+We want to discover K non-linear interpretable paths on the latent space. The most straightforward way is to first generate a collection of image synthesis, then label these images regarding a target attribute, and finally find the latent separation boundary through supervised training. In view of the annotation drawbacks of previous method, finding steerable directions of the latent space in an unsupervised manner is another direction, such as using PCA. The common issue of the existing approaches is the limitation of global semantics, we would like to focus on some particular image region.
+
+current methods required 
+
+- carefully designed loss functions
+
+- introduction of additional attribute labels or features
+- special architectures to train new models
 
 
 
@@ -85,9 +130,7 @@ Meaningful human interpretable directions can refer to either domain-specific fa
 - change view-point or shapes and textures of cars
 - interpolate between different images
 
-some simple transformation (rotation, zooming)
-
-[add some image]
+- some simple transformation (rotation, zooming)
 
 
 
@@ -100,8 +143,6 @@ some simple transformation (rotation, zooming)
 - for artistic visualization, design, photo enhancement
 
 - solving many other downstream tasks, including face verification, landmark detection, layout prediction, transfer learning, style mixing, image editing, *etc*.
-
-
 
 
 
@@ -140,24 +181,7 @@ This is the summary of controllable GAN including;
 
 
 
-:pushpin: **Problem Statement**
-
-A (<u>pretrained</u>) fixed GAN model consisting of a generator **G** and a discriminator **D**，latent vector $\boldsymbol{z} \in \mathbb{R}^m$ from a known distribution $P(\boldsymbol{z})$, and sample $N$ random vectors $\mathbb{Z} = \{\boldsymbol{z}^{(1)}, \dots, \boldsymbol{z}^{(N)}\}$
-
-We want to discover K non-linear interpretable paths on the latent space. The most straightforward way is to first generate a collection of image synthesis, then label these images regarding a target attribute, and finally find the latent separation boundary through supervised training. In view of the annotation drawbacks of previous method, finding steerable directions of the latent space in an unsupervised manner is another direction, such as using PCA. The common issue of the existing approaches is the limitation of global semantics, we would like to focus on some particular image region.
-
-
-
-current methods required 
-
-- carefully designed loss functions
-
-- introduction of additional attribute labels or features
-- special architectures to train new models
-
-
-
-### Metrics
+### Evaluation Metrics
 
 > 我们需要一些，其实也是面对整个大的解耦学习 Disentanglement Learning 
 
@@ -176,22 +200,27 @@ Julian Zaidi, Jonathan Boilard, Ghyslain Gagnon, Marc-André Carbonneau
 
 
 
-### Tricks
+## Tricks
 
-[(GLO) Optimizing the Latent Space of Generative Networks](https://arxiv.org/pdf/1707.05776.pdf)  
-**[`ICML 2018`] (`Facebook`)**  
-*Piotr Bojanowski, Armand Joulin, David Lopez-Paz, Arthur Szlam*
+插值方法有最简单的**线性插值**，也有**球性插值**
 
-<details><summary>Click to expand</summary>
+- 通常是假设 z 服从高斯分布，而这样导致点不太可能落在离球面 $\mathcal{S}(\sqrt{d}, d, 2)$ 太远的地方。又因为投影到球体上很容易且数值友好，因此会时刻让 z 映射到一个球体上。使用中，也会不使用 $\sqrt{d}$ 的球体，而是直接用单位球。
 
-通常是假设 z 服从高斯分布，而这样导致点不太可能落在离球面 $\mathcal{S}(\sqrt{d}, d, 2)$ 太远的地方。又因为投影到球体上很容易且数值友好，因此会时刻让 z 映射到一个球体上。使用中，也会不使用 $\sqrt{d}$ 的球体，而是直接用单位球。
+Truncation：
 
-</details>
+首先生成一系列图像，有他们对应的Z，然后计算出一个均值，生成新图像的时候，采用
+$$
+w' = w_{avg} + \alpha (w - w_{avg})
+$$
+
+
 
 
 ## Literature
 
+Please ref subfolder for more details.
 
+- [Inversion](./Inversion)
 
 ### Survey
 
@@ -498,6 +527,12 @@ A free viewpoint portrait generator with dynamic styling
 Disentangled image generation through structured noise injection
 
 Gan-control: Explicitly controllable gans
+
+
+
+[(GLO) Optimizing the Latent Space of Generative Networks](https://arxiv.org/pdf/1707.05776.pdf)  
+**[`ICML 2018`] (`Facebook`)**  
+*Piotr Bojanowski, Armand Joulin, David Lopez-Paz, Arthur Szlam*
 
 
 
