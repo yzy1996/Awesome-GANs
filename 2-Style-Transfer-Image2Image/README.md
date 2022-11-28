@@ -8,7 +8,7 @@ A collection of resources on Image Style Transfer (photorealistic image stylizat
 
 
 
-<details><summary>Contributing: Click to expand </summary>
+<details><summary><b>Contributing</b></summary><p>
 
 Feedback and contributions are welcome! If you think I have missed out on something (or) have any suggestions (papers, implementations and other resources), feel free to pull a request or leave an issue. I will release the [latex-pdf version]() in the future. :arrow_down:markdown format:
 
@@ -20,7 +20,7 @@ Feedback and contributions are welcome! If you think I have missed out on someth
 
 :smile: Now you can use this [script](https://github.com/yzy1996/Python-Code/tree/master/Python%2BarXiv) to automatically generate the above text.
 
-</details>
+</p></details>
 
 ## Introduction
 

@@ -2,7 +2,7 @@
 
 > 本文档的目标 noise-to-image synthesis
 
-**G**enerator plays a mapping task to generate an RGB image
+**G**enerator plays a mapping task via approximating the real image distribution.
 
 **D**iscriminator plays a bi-classification task via distinguishing real and synthesized samples. The discriminator’s task is two-fold: First, it projects the real and fake samples into a meaningful space. Second, it discriminates based on this representation.
 

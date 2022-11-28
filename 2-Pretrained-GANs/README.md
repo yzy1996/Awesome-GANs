@@ -2,7 +2,7 @@
 
 Can be related to controllable GAN and GAN inversion.
 
-
+主要摘录利用 pre-trained GAN 来做事情
 
 ## Introduction
 

@@ -4,9 +4,20 @@
 
 
 
+## Contents
+
+- Code
+- Literature
 
 
-[clean-fid](https://github.com/GaParmar/clean-fid) for Evaluating Generative Models 
+
+
+
+[clean-fid](https://github.com/GaParmar/clean-fid)
+
+[LPIPS](https://github.com/richzhang/PerceptualSimilarity)
+
+
 
 
 
@@ -20,7 +31,9 @@ blog: https://zhuanlan.zhihu.com/p/99375611
 
 
 
-https://github.com/GaParmar/clean-fid
+
+
+同时也有工作说不需要监督式的表征方式，用自监督的方式能带来更好的效果。
 
 
 
@@ -89,7 +102,7 @@ $$
 
 The Fréchet distance between two multivariate Gaussians $X_1 \sim N(\mu_1, \sigma_1)$ and $X_2 \sim N(\mu_2, \sigma_2)$ is:
 $$
-d^2 = ||\mu_1 - \mu_2||^2 + \Tr(\sigma_1 + \sigma_2 - 2\sqrt{\sigma_1\sigma_2}).
+d^2 = ||\mu_1 - \mu_2||^2 + \(\sigma_1 + \sigma_2 - 2\sqrt{\sigma_1\sigma_2}).
 $$
 
 > sample 数量应该比网络层的维度大，Inception pool_3 的维度是 2048，所以应该大于 2048，一般推荐用大于 10,000 个样本。（原因是计算协方差矩阵至少得填满才能算平方根）
@@ -143,4 +156,120 @@ python -m pytorch_fid path/to/dataset1 path/to/dataset2
 interpolation quality and disentanglement
 
 
+
+# Evaluation & Loss for Generative Model
+
+
+
+
+
+## For 3D Point Clouds
+
+There are two setpoints clouds A and B, and we hope to use some useful metrics to measure the accurancy.
+
+- JSD (Jensen-Shannon Divergence)
+  $$
+  J S D\left(P_{A} \| P_{B}\right)=\frac{1}{2} D\left(P_{A} \| M\right)+\frac{1}{2} D\left(P_{B} \| M\right)
+  $$
+  where $M = \frac{1}{2} (P_A + P_B)$
+
+
+
+### Chamfer Distance
+
+
+
+[github](https://github.com/ThibaultGROUEIX/ChamferDistancePytorch)
+
+
+
+
+
+
+
+
+
+## loss function for image generation task
+
+- squared Euclidean distance between images
+
+  reconstruct image from details lacking representation features looks blurry.
+
+- 
+
+
+
+the general idea is to measure the similarity not in the image space, but rather in a feature space.
+
+
+
+> exact location of all fine details are not important for perceptual similarity of images
+>
+> the distribution of these details plays a key role.
+>
+> their main insight is that invariance to irrelevant transformations and sensitivity to local image 
+
+
+
+# Evaluation
+
+一些个重建loss等
+
+
+
+### Reconstruction error 
+
+- pSNR
+
+$$
+\operatorname{pSNR}(I, R)=-20 \log _{10} \frac{\operatorname{MAX}(I)}{\sqrt{\operatorname{MSE}(I, R)}}
+$$
+
+where MAX corresponds to the maximal value the image I can attain, and MSE is the Mean Squared Error.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Patch-Wise Minimal Pixels
+
+Let an image $I \in \mathbb{R}^{m \times n \times c}$ be divided into $P$ non-overlapped patches with a patch size of $r \times r$, for with $P=\left\lceil\frac{m}{r}\right\rceil \cdot\left[\frac{n}{r}\right]$.
+$$
+\mathcal{P}(I)(i)=\min _{(x, y) \in \Omega_{i}}\left(\min _{c \in\{r, g, b\}} I(x, y, c)\right)
+$$
+
+
+
+
+Perceptual similarity metrics
+
+[Generating images with perceptual similarity metrics based on deep networks](https://arxiv.org/pdf/1602.02644.pdf)  
+
+
+
+
+
+
+
+
+
+## perceptual similarity distances
+
+related papers:
+
+`citation 4258` Perceptual losses for real-time style transfer and super-resolution
+
+`citation 2431` Image Style Transfer Using Convolutional Neural Networks
+
+`citation 698` Generating images with perceptual similarity metrics based on deep networks
 
