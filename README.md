@@ -26,6 +26,8 @@ If intelligence was a cake, unsupervised learning would be the cake, supervised 
 
 **SOTA Benchmark:** [Image Generation](https://paperswithcode.com/task/image-generation) 
 
+**Open Questions about Generative Adversarial Networks:** https://distill.pub/2019/gan-open-problems/
+
 ![GAN Development](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/GAN%20Development.png)
 
 
