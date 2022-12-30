@@ -546,3 +546,16 @@ Gan-control: Explicitly controllable gans
 | ------------------------------------------------------------ |
 | [MaskGAN: Towards Diverse and Interactive Facial Image Manipulation](https://arxiv.org/pdf/1907.11922.pdf)  <br />**[`CVPR 2020`]** Cheng-Han Lee, Ziwei Liu, Lingyun Wu, Ping Luo |
 
+
+
+### Related work in papers
+
+一般会出现的小标题是：
+
+- Latent Semantic Interpretation
+- 
+
+
+
+> I have published the materials below.
+
