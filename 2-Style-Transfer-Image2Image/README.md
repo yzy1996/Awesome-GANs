@@ -46,6 +46,32 @@ It has attracted increasing attentions since its widely practical use, such as
 
 
 
+在风格迁移里有一个专门的Loss叫perceptual loss，最早是在  Perceptual losses for real-time style transfer and super-resolution 2016 里被提出
+
+related papers:
+
+`citation 4258` Perceptual losses for real-time style transfer and super-resolution
+
+`citation 2431` Image Style Transfer Using Convolutional Neural Networks
+
+`citation 698` Generating images with perceptual similarity metrics based on deep networks
+
+
+
+后来在很多图像里得到应用
+
+- 超分辨率：
+
+  Image Super-Resolution by Neural Texture Transfer 2019
+
+  Super-resolution with deep convolutional sufficient statistics 2016
+
+  Photo-realistic single image super-resolution using a generative adversarial network 2017
+
+  EnhanceNet: Single image super-resolution through automated texture synthesis 2017
+
+
+
 ## Literature
 
 > The order is from the old to the latest

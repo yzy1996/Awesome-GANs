@@ -73,10 +73,10 @@ $$
 ### Earth Mover's distance
 
 $$
-d_{E M D}\left(S_{1}, S_{2}\right)=\min _{\phi: S_{1} \rightarrow S_{2}} \sum_{x \in S_{1}}\|x-\phi(x)\|_{2}
+d_{E M D}\left(S_1, S_2\right)=\min _{\phi: S_1 \rightarrow S_2} \sum_{x \in S_1}\|x-\phi(x)\|_2 \quad \text { where } \phi: S_1 \rightarrow S_2 \text { is a bijection. }
 $$
 
-where $\phi: S_{1} \rightarrow S_{2}$ is a bijection
+
 
 
 

@@ -1,8 +1,12 @@
 # <p align=center>`GAN Inversion`</p>
 
-A collection of resources on GAN Inversion. 
+A collection of resources on GAN Inversion. Related material: [awesome-gan-inversion](https://github.com/weihaox/awesome-gan-inversion)
 
-Related material: [awesome-gan-inversion](https://github.com/weihaox/awesome-gan-inversion)
+
+
+## Contents
+
+- 
 
 
 
@@ -406,3 +410,4 @@ In-domain GAN inversion for real image editing
 
 [Encoder4Editing](https://github.com/omertov/encoder4editing)
 
+https://github.com/caopulan/GANInverter
