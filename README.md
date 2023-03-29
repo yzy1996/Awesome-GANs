@@ -67,16 +67,14 @@ See more details in the subfolders.
 
 |   Name (paper link)   |                        Loss Function                         |
 | :-------------------: | :----------------------------------------------------------: |
-|    **Vanilla GAN**    | $$L_D^{GAN} = -\mathbb{E}_{x \sim p_r} [\log (D(x))] - \mathbb{E}_{\tilde{x} \sim p_g} [\log (1-D(\tilde{x}))] \\L_G^{GAN} = \mathbb{E}_{\tilde{x} \sim p_g} [\log (1 - D(\tilde{x}))]$$ |
-| **non-saturated GAN** | $L_D^{GAN} = -\mathbb{E}_{x \sim p_r} [\log (D(x))] - \mathbb{E}_{\tilde{x} \sim p_g} [\log (1 - D(\tilde{x}))] \\ L_G^{GAN} = -\mathbb{E}_{\tilde{x} \sim p_g} [\log (D(\tilde{x}))]$ |
-|       **LSGAN**       | $L_D^{LSGAN} = -\mathbb{E}_{x \sim p_r} [(D(x)-1)^2] + \mathbb{E}_{\tilde{x} \sim p_g} [D(\tilde{x})^2] \\L_G^{LSGAN} = -\mathbb{E}_{\tilde{x} \sim p_g} [(D(\tilde{x})-1)^2]$ |
-|       **WGAN**        | $$\begin{align}&L_{D}^{WGAN}=-\mathbb{E}_{x \sim p_r}[D(x)]+\mathbb{E}_{\tilde{x} \sim p_g}[D(\tilde{x})]\\&L_{G}^{WGAN}=-\mathbb{E}_{\tilde{x} \sim p_g}[D(\tilde{x})]\\&W_D \leftarrow \text{clip-by-value}(W_D, -0.01, 0.01) \end{align}$$ |
-|      **WGAN-GP**      | $$L_{D}^{WGAN-GP}=L_{D}^{WGAN} + \lambda {\mathbb{E}}_{\hat{x} \sim p_{\hat{x}}}\left[\left(\left\|\nabla_{\hat{x}} D(\hat{x})\right\|_{2}-1\right)^{2}\right] \\ L_{G}^{WGAN-GP}=L_{G}^{WGAN} \\ \hat{x} = \alpha x + (1-\alpha) \tilde{x}$$ |
-|      **DRAGAN**       | $L_{D}^{DRAGAN}=L_{D}^{GAN} + \lambda {\mathbb{E}}_{\tilde{x} \sim p_r+\mathcal{N}(0, c)}\left[\left(\left\|\nabla_{\hat{x}} D(\tilde{x})\right\|_{2}-1\right)^{2}\right] \\ L_{G}^{DRAGAN}=L_{G}^{GAN}$ |
+|    **Vanilla GAN**    | $L\_D^{GAN} = - \mathbb{E}\_{x \sim p\_r} [\log (D(x))] - \mathbb{E}\_{\tilde{x} \sim p\_g} [\log (1-D(\tilde{x}))] \quad L\_G^{GAN} = \mathbb{E}\_{\tilde{x} \sim p\_g} [\log (1 - D(\tilde{x}))]$ |
+| **non-saturated GAN** | $L\_D^{GAN} = - \mathbb{E}\_{x \sim p\_r} [\log (D(x))] - \mathbb{E}\_{\tilde{x} \sim p\_g} [\log (1 - D(\tilde{x}))] \quad L\_G^{GAN} = -\mathbb{E}\_{\tilde{x} \sim p\_g} [\log (D(\tilde{x}))] $ |
+|       **LSGAN**       | $L\_D^{LSGAN} = - \mathbb{E}\_{x \sim p\_r} [(D(x)-1)^2] + \mathbb{E}\_{\tilde{x} \sim p\_g} [D(\tilde{x})^2] \quad L\_G^{LSGAN} = -\mathbb{E}\_{\tilde{x} \sim p\_g} [(D(\tilde{x})-1)^2]$ |
+|       **WGAN**        | $L\_{D}^{WGAN}= - \mathbb{E}\_{x \sim p\_r}[D(x)]+\mathbb{E}\_{\tilde{x} \sim p\_g}[D(\tilde{x})] \quad L\_{G}^{WGAN}=-\mathbb{E}\_{\tilde{x} \sim p\_g}[D(\tilde{x})] \quad W\_D \leftarrow \text{clip-by-value}(W\_D, -0.01, 0.01) $ |
+|      **WGAN-GP**      | $L\_{D}^{WGAN-GP}=L\_{D}^{WGAN} + \lambda {\mathbb{E}}\_{\hat{x} \sim p\_{\hat{x}}}\left[\left(\left\|\nabla\_{\hat{x}} D(\hat{x})\right\|\_{2}-1\right)^{2}\right] \quad L\_{G}^{WGAN-GP}=L\_{G}^{WGAN} \quad \hat{x} = \alpha x + (1-\alpha) \tilde{x}$ |
+|      **DRAGAN**       | $L\_{D}^{DRAGAN}=L\_{D}^{GAN} + \lambda {\mathbb{E}}\_{\tilde{x} \sim p\_r+\mathcal{N}(0, c)}\left[\left(\left\|\nabla\_{\hat{x}} D(\tilde{x})\right\|\_{2}-1\right)^{2}\right] \quad L\_{G}^{DRAGAN}=L\_{G}^{GAN}$ |
 
 > inspired by [hwalsuklee](https://github.com/hwalsuklee/tensorflow-generative-model-collections)
-
-
 
 
 ## Some Awesome Codes
